@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间显示 & 计时器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>时间显示 & 计时器</h1>
+        
+        <!-- 时间显示区域 -->
+        <div class="section clock-section">
+            <h2>当前时间</h2>
+            <div class="clock-display">
+                <span id="currentTime">00:00:00</span>
+            </div>
+            <div class="date-display">
+                <span id="currentDate">----年--月--日 星期-</span>
+            </div>
+        </div>
+
+        <!-- 计时器区域 -->
+        <div class="section timer-section">
+            <h2>计时器</h2>
+            <div class="timer-display">
+                <span id="timerDisplay">00:00:00</span>
+            </div>
+            <div class="timer-controls">
+                <button id="startBtn" class="btn btn-start">开始</button>
+                <button id="pauseBtn" class="btn btn-pause" disabled>暂停</button>
+                <button id="resetBtn" class="btn btn-reset">重置</button>
+            </div>
+            <div class="timer-input">
+                <div class="time-input-group">
+                    <div class="time-input-field">
+                        <input type="number" id="inputHours" min="0" max="99" value="0" placeholder="时">
+                        <label>时</label>
+                    </div>
+                    <span class="time-separator">:</span>
+                    <div class="time-input-field">
+                        <input type="number" id="inputMinutes" min="0" max="59" value="0" placeholder="分">
+                        <label>分</label>
+                    </div>
+                    <span class="time-separator">:</span>
+                    <div class="time-input-field">
+                        <input type="number" id="inputSeconds" min="0" max="59" value="0" placeholder="秒">
+                        <label>秒</label>
+                    </div>
+                </div>
+                <button id="setCustomBtn" class="btn btn-custom">设置倒计时</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
