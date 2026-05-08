@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+/* 时钟样式 */
+.clock-display {
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Courier New', monospace;
+    padding: 10px 0;
+    letter-spacing: 4px;
+}
+
+.date-display {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* 计时器样式 */
+.timer-display {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Courier New', monospace;
+    padding: 15px 0;
+    letter-spacing: 3px;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-start {
+    background: #28a745;
+    color: white;
+}
+
+.btn-start:hover:not(:disabled) {
+    background: #218838;
+}
+
+.btn-pause {
+    background: #ffc107;
+    color: #333;
+}
+
+.btn-pause:hover:not(:disabled) {
+    background: #e0a800;
+}
+
+.btn-reset {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-reset:hover:not(:disabled) {
+    background: #c82333;
+}
+
+.btn-custom {
+    background: #007bff;
+    color: white;
+}
+
+.btn-custom:hover {
+    background: #0069d9;
+}
+
+/* 预设按钮 */
+.timer-presets {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    padding: 8px 16px;
+    border: 2px solid #007bff;
+    background: transparent;
+    color: #007bff;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.preset-btn:hover {
+    background: #007bff;
+    color: white;
+}
+
+.preset-btn.active {
+    background: #007bff;
+    color: white;
+}
+
+/* 自定义输入 */
+.timer-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.timer-input label {
+    color: #555;
+    font-size: 14px;
+}
+
+.timer-input input {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 120px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.timer-input input:focus {
+    border-color: #007bff;
+}
+
+/* 计时器状态指示 */
+.timer-status {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.timer-status.running {
+    color: #28a745;
+}
+
+.timer-status.paused {
+    color: #ffc107;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .clock-display {
+        font-size: 40px;
+    }
+
+    .timer-display {
+        font-size: 36px;
+    }
+
+    .timer-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .timer-presets {
+        gap: 6px;
+    }
+
+    .preset-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
